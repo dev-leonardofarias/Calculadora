@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora</title>
+<body>
+    <div class="background">
+        <div class="calculadora">
+            <h1>Calculadora</h1>
+            <p id="resultado" ></p>
+            <table>
+                <tr>
+                    <td><button class="button" onclick="clean()">C</button></td>
+                    <td><button class="button" onclick="insert('/')">/</button></td>
+                    <td><button class="button" onclick="insert('*')">*</button></td>
+                    <td><button class="button" onclick="insert('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="button" onclick="insert('7')">7</button></td>
+                    <td><button class="button" onclick="insert('8')">8</button></td>
+                    <td><button class="button" onclick="insert('9')">9</button></td>
+                    <td rowspan="2"><button class="button" style="height: 90px;" onclick="insert('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button class="button" onclick="insert('4')">4</button></td>
+                    <td><button class="button" onclick="insert('5')">5</button></td>
+                    <td><button class="button" onclick="insert('6')">6</button></td>
+                </tr>
+                <tr>
+                    <td><button class="button" onclick="insert('1')">1</button></td>
+                    <td><button class="button" onclick="insert('2')">2</button></td>
+                    <td><button class="button" onclick="insert('3')">3</button></td>
+                    <td rowspan="2"><button class="button" style="height: 90px;" onclick="calcular()">=</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="button" style="width: 90px;" onclick="insert('0')">0</button></td>
+                    <td><button class="button" onclick="insert('.')">,</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        function insert(num) {
+            var numero = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = numero + num;
+        }
+
+        function clean() {
+            document.getElementById("resultado").innerHTML = "";
+        }
+
+        function calcular() {
+            var resultado = document.getElementById("resultado").innerHTML;
+            if(resultado)
+            {
+                document.getElementById("resultado").innerHTML = eval(resultado);
+            }
+        }
+    </script>
+</body>
+</html>
