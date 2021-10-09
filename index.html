@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora</title>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <script src="navbar.js"></script>
+<body id="inicio">
     <div class="background">
-        <div class="calculadora">
+        <header>
+            <nav>
+                <a href="/" class="logo">Calcule online</a>
+                <div class="menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#calculadora">Calculadora</a></li>
+                    <li><a href="#">Conversor de moedas</a></li>
+                    <li><a href="#">Conversor de medidas</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main></main>
+        <div class="calculadora" id="calculadora">
             <h1>Calculadora</h1>
             <p id="resultado" ></p>
             <table>
@@ -40,23 +60,5 @@
             </table>
         </div>
     </div>
-    <script>
-        function insert(num) {
-            var numero = document.getElementById("resultado").innerHTML;
-            document.getElementById("resultado").innerHTML = numero + num;
-        }
-
-        function clean() {
-            document.getElementById("resultado").innerHTML = "";
-        }
-
-        function calcular() {
-            var resultado = document.getElementById("resultado").innerHTML;
-            if(resultado)
-            {
-                document.getElementById("resultado").innerHTML = eval(resultado);
-            }
-        }
-    </script>
 </body>
 </html>
